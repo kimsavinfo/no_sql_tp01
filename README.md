@@ -26,8 +26,6 @@ Then it will show the result to the user.
 1. Launch Redis server :
 > redis-server
 
-> irb
-
 2. Create jobs
 > load 'main.rb'
 
