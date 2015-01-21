@@ -12,13 +12,13 @@ Then it will show the result to the user.
 
 ####What do you need ?
 
-* Ruby
-* Redis  : open source, BSD licensed, advanced key-value cache and store : 
-	-> gem install redis
+* Ruby : dynamic, open source programming language with a focus on simplicity and productivity.
+* Redis  : open source, BSD licensed, advanced key-value cache and store
+	> gem install redis
 * JSon : lightweight data-interchange format
-	-> gem install json ( to parse HTML)
+	> gem install json ( to parse HTML)
 * Mechanize : library used for automating interaction with websites
-	-> gem mechanize
+	> gem mechanize
 
 <!> You can launch > bundle install
 
