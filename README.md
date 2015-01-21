@@ -28,10 +28,12 @@ Then it will show the result to the user.
 
 2. Create jobs
 > irb
+
 > load 'main.rb'
 
 3. Launch daemon
 > irb
+
 > load 'daemon.rb'
 
 ####For more information, please see below :
