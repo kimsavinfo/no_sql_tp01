@@ -26,14 +26,12 @@ Then it will show the result to the user.
 1. Launch Redis server :
 > redis-server
 
-2. Create jobs
 > irb
 
+2. Create jobs
 > load 'main.rb'
 
 3. Launch daemon
-> irb
-
 > load 'daemon.rb'
 
 ####For more information, please see below :
