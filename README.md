@@ -1,8 +1,6 @@
 # no_sql_tp01
 
-NO SQL - TP01 
-
-####Subjet
+##Subjet
 Thanks to Redis, create queue management system that can :
 - Add a job
 - Do the job
@@ -36,5 +34,5 @@ Then it will show the result to the user.
 > irb
 > load 'daemon.rb'
 
-####For more information, please see :s
+####For more information, please see below :
 http://slides.com/mathieulaporte-1/nosql#/1
