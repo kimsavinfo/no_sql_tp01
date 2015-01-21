@@ -25,7 +25,9 @@ Then it will show the result to the user.
 
 > gem mechanize
 
-<!> You can launch > bundle install
+<!> You can launch <!>
+
+> bundle install
 
 ####Where do I start ?
 1. Launch Redis server :
