@@ -8,7 +8,7 @@ Thanks to Redis, create queue management system that can :
 - Show the number of jobs that have been done
 
 It was decided that the job will send a 'GET' HTTP request on an url.
-Then it will show the result to the user.
+Then it will show the page title and the page content to the user.
 
 ####What do you need ?
 
