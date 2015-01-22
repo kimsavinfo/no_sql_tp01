@@ -1,7 +1,6 @@
-class DaemonWorker < Worker
+class CrawlerWorker < Worker
 	def startListening
-		$r = Redis.new
-		currentJob = $r.lpop("jobsToDo")
+		currentJob = @redis.lpop("jobsToDo")
 
 		if !currentJob.nil?
 			jobParsed = JSON.parse currentJob
@@ -10,7 +9,7 @@ class DaemonWorker < Worker
 
 			puts "#{job.task} on #{job.url}"
 			displayWebPage(job.url)
-			$r.rpush('jobsDone', job.toJson)
+			@redis.rpush('jobsDone', job.toJson)
 
 			self.showJobsToDo
 			self.showJobsDone
@@ -27,14 +26,14 @@ class DaemonWorker < Worker
 	end
 
 	def showJobsToDo
-		jobsToDoCount = $r.llen 'jobsToDo'
+		jobsToDoCount = @redis.llen 'jobsToDo'
 		puts "Jobs that need to be done #{jobsToDoCount} :"
-		puts $r.lrange("jobsToDo", 0, -1)
+		puts @redis.lrange("jobsToDo", 0, -1)
 	end
 
 	def showJobsDone
-		jobsDoneCount = $r.llen 'jobsDone'
+		jobsDoneCount = @redis.llen 'jobsDone'
 		puts "Done jobs #{jobsDoneCount} :"
-		puts $r.lrange("jobsDone", 0, -1)
+		puts @redis.lrange("jobsDone", 0, -1)
 	end
 end

@@ -2,8 +2,6 @@ require 'redis'
 require 'json'
 require './models/worker.rb'
 
-redis = Redis.new(:host => 'localhost', :port => 6379)
-
 urls = ["https://www.google.fr/?gws_rd=ssl", "http://ecampusbordeaux.epsi.fr/contact-info", "http://lesjoiesducode.fr/"]
 iUrl = 0
 

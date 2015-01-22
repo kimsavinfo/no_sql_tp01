@@ -2,12 +2,12 @@ require 'redis'
 require 'json'
 require 'mechanize'
 require './models/worker.rb'
-require './models/daemonWorker.rb'
+require './models/crawlerWorker.rb'
 
 while true do
 	
-	daemonWorker = DaemonWorker.new
-	daemonWorker.startListening
+	crawlerWorker = CrawlerWorker.new
+	crawlerWorker.startListening
 
 	sleep 5
 

@@ -1,7 +1,8 @@
 class Worker
 	def initialize
-		@task = "GET"
-		@url = "http://slides.com/mathieulaporte-1/nosql#/1"
+		@task = ""
+		@url = ""
+		@redis = Redis.new(:host => 'localhost', :port => 6379)
 	end
 
 	def setJob(task, url)
@@ -22,8 +23,7 @@ class Worker
 	end
 
 	def saveJob
-		redis = Redis.new
-		redis.rpush("jobsToDo", self.toJson)
+		@redis.rpush("jobsToDo", self.toJson)
 		puts "Add : #{@task} associated to #{@url}"
 	end
 end
