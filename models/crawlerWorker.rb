@@ -5,16 +5,16 @@ require 'mechanize'
 class CrawlerWorker < Worker
 
 	def startListening
+		self.clear
 		jobToDo = @redis.lpop("jobsToDo")
 
 		if !jobToDo.nil?
 			jobParsed = JSON.parse jobToDo
-			worker = Worker.new
-			worker.setJob(jobParsed['task'], jobParsed['url'])
+			self.setJob(jobParsed['task'], jobParsed['url'])
 
-			puts "#{worker.task} on #{worker.url}"
-			displayWebPage(worker.url)
-			@redis.rpush('jobsDone', worker.toJson)
+			puts "#{self.task} on #{self.url}"
+			displayWebPage(self.url)
+			@redis.rpush('jobsDone', self.toJson)
 
 			self.showJobsToDo
 			self.showJobsDone
@@ -41,5 +41,5 @@ class CrawlerWorker < Worker
 		puts "Done jobs #{jobsDoneCount} :"
 		puts @redis.lrange("jobsDone", 0, -1)
 	end
-	
+
 end

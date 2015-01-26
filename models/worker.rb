@@ -3,9 +3,13 @@ require 'json'
 
 class Worker
 	def initialize
+		self.clear
+		@redis = Redis.new(:host => 'localhost', :port => 6379)
+	end
+
+	def clear
 		@task = ""
 		@url = ""
-		@redis = Redis.new(:host => 'localhost', :port => 6379)
 	end
 
 	def setJob(task, url)
