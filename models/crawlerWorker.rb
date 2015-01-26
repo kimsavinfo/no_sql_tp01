@@ -3,6 +3,7 @@ require 'json'
 require 'mechanize'
 
 class CrawlerWorker < Worker
+
 	def startListening
 		currentJob = @redis.lpop("jobsToDo")
 
@@ -40,4 +41,5 @@ class CrawlerWorker < Worker
 		puts "Done jobs #{jobsDoneCount} :"
 		puts @redis.lrange("jobsDone", 0, -1)
 	end
+	
 end
