@@ -4,7 +4,7 @@ require 'mechanize'
 
 class CrawlerWorker < Worker
 
-	def startListening
+	def doJob
 		self.clear
 		jobToDo = @redis.lpop("jobsToDo")
 

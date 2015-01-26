@@ -5,7 +5,7 @@ crawlerWorker = CrawlerWorker.new
 
 while true do
 
-	crawlerWorker.startListening
+	crawlerWorker.doJob
 
 	sleep 5
 
