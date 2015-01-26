@@ -34,11 +34,11 @@ Finally, it will display jobs that will be executed and the jobs that have been 
 1. Launch Redis server :
 > redis-server
 
-2. Create jobs
-irb > load 'main.rb'
+2. Create jobs (irb) 
+> load 'main.rb'
 
-3. Launch daemon
-irb > load 'daemon.rb'
+3. Launch daemon (irb) 
+> load 'daemon.rb'
 
 ####For more information, please see below :
 http://slides.com/mathieulaporte-1/nosql#/1
