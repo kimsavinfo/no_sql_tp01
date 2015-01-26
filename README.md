@@ -24,7 +24,7 @@ Finally, it will display jobs that will be executed and the jobs that have been 
 
 * Mechanize : library used for automating interaction with websites
 
-> gem mechanize
+> gem install mechanize
 
 <!> You can launch <!>
 
