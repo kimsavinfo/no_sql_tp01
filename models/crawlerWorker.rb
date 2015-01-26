@@ -1,3 +1,7 @@
+require 'redis'
+require 'json'
+require 'mechanize'
+
 class CrawlerWorker < Worker
 	def startListening
 		currentJob = @redis.lpop("jobsToDo")

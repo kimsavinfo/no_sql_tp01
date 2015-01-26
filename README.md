@@ -9,6 +9,7 @@ Thanks to Redis, create queue management system that can :
 
 It was decided that the job will send a 'GET' HTTP request on an url.
 Then it will show the page title and the page content to the user.
+Finally, it will display jobs that will be executed and the jobs that have been already done.
 
 ####What do you need ?
 
@@ -34,10 +35,10 @@ Then it will show the page title and the page content to the user.
 > redis-server
 
 2. Create jobs
-> load 'main.rb'
+irb > load 'main.rb'
 
 3. Launch daemon
-> load 'daemon.rb'
+irb > load 'daemon.rb'
 
 ####For more information, please see below :
 http://slides.com/mathieulaporte-1/nosql#/1

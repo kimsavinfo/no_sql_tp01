@@ -1,3 +1,6 @@
+require 'redis'
+require 'json'
+
 class Worker
 	def initialize
 		@task = ""
